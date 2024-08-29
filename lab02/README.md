@@ -15,4 +15,4 @@
 ## EX. 3 - LEITURA E ESCRITA.
 
 ### EXECUÇÃO:
-![image](https://github.com/user-attachments/assets/fa4be3f6-f14c-48ef-ac25-04e9865339fa)
+![image](https://github.com/user-attachments/assets/165bc476-0a91-4afd-b821-502bff54588b)
