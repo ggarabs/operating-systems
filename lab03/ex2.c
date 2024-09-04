@@ -13,7 +13,12 @@ int main(){
 
 	if(id){
 		int stt;
-		wait(&stt);
+		pid_t child_pid = wait(&stt);
+
+		if(child_pid == -1){
+			perror("Erro ao esperar o processo filho.");
+			return 1;
+		}
 
 		printf("No processo pai:\n");
 

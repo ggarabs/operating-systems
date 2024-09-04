@@ -13,7 +13,12 @@ int main(){
 
 	if(id){
 		int stt;
-		wait(&stt);
+		pid_t child_pid = wait(&stt);
+
+		if(child_pid == -1){
+			perror("Erro ao esperar pelo processo filho");
+			return 1;
+		}
 
 		printf("\nNo processo pai:\n");
 
@@ -24,7 +29,12 @@ int main(){
 	}else{
 		printf("No processo filho: \nID do processo: %ld.\nEstou no diretorio: ", (long)getpid());
 
-		execlp("pwd", "pwd", (char *)NULL);
+		pid_t return_stt = execlp("pwd", "pwd", (char *)NULL);
+
+		if(return_stt == -1){
+			printf("Falha ao executar o comando 'pwd'\n");
+			return 1;
+		}
 
 		printf("A partir daqui não executa mais! \n");
 	}
